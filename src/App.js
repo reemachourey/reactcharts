@@ -51,10 +51,10 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-          <Dropdown onVisualChange={this.handleVisualChange} />
           <div className="ChartArea">
             {this.state.isLoaded ? <Chart chartData={this.state.chartData} chartType={this.state.chartType} /> : <div>Loading...</div>}
           </div>
+            <Dropdown onVisualChange={this.handleVisualChange} />
         </div>
       );
   }

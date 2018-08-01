@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import {Bar} from 'react-chartjs-2';
+import PropTypes from 'prop-types';
 
 class BarChart extends Component{
 
@@ -24,13 +24,13 @@ render(){
     <div className="chart">
     <Bar
       data={this.state.chartData}
+      width={200} height={200}
       options={{
+        maintainAspectRatio:false,
         title:{
           display:true,
-          text:'Network Share of Generl Purpose Cards',
-          fontSize:25,
-          width:400,
-          height:400
+          text:'Network Share of General Purpose Cards',
+          fontSize:25
         },
         legend:{
           display:this.props.displayLegend,
@@ -49,4 +49,5 @@ BarChart.propTypes = {
   displayLegend: PropTypes.bool,
   legendPosition: PropTypes.string
 };
+
 export default BarChart;
