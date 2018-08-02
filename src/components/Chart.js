@@ -32,7 +32,6 @@ class Chart extends Component {
         chartToBeDisplayed = <div className="all">
                                <BarChart chartData={this.state.chartData} />
                                <PieChart chartData={this.state.chartData} />
-
                              </div>;
         break;
       default:

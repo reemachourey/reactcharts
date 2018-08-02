@@ -24,8 +24,25 @@ render(){
     <div className="chart">
     <Bar
       data={this.state.chartData}
-      width={200} height={200}
+      width={100} height={200}
       options={{
+        tooltips: {
+                enabled: true,
+                mode: 'single',
+                callbacks: {
+                    label: function(tooltipItems, data) {
+                        return tooltipItems.yLabel + ' %';
+                    }
+                }
+            },
+        scales: {
+        yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'Percentange'
+          }
+        }]
+      },
         maintainAspectRatio:false,
         title:{
           display:true,

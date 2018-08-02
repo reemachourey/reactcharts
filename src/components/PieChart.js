@@ -24,8 +24,18 @@ render(){
     <div className="chart">
     <Pie
       data={this.state.chartData}
-      width={200} height={200}
+      width={300} height={300}
       options={{
+        tooltips: {
+                enabled: true,
+                mode: 'single',
+                callbacks: {
+        label: function(tooltipItem, data) {
+            var indice = tooltipItem.index;
+            return  data.labels[indice] +': '+data.datasets[0].data[indice] + '%';
+        }
+    }
+            },
         maintainAspectRatio:false,
         title:{
           display:true,
